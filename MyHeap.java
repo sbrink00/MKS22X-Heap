@@ -1,17 +1,17 @@
 
 public class MyHeap{
-  public static boolean hasLeft(int size, int idx){return 2*idx + 1 <= size;}
-  public static boolean hasRight(int size, int idx){return 2*idx + 2 <= size;}
-  public static int getLeft(int size, int idx){return 2*idx + 1;}
-  public static int getRight(int size, int idx){return 2*idx + 2;}
+  private static boolean hasLeft(int size, int idx){return 2*idx + 1 <= size;}
+  private static boolean hasRight(int size, int idx){return 2*idx + 2 <= size;}
+  private static int getLeft(int size, int idx){return 2*idx + 1;}
+  private static int getRight(int size, int idx){return 2*idx + 2;}
 
-  public static void swap(int[] ary, int idx1, int idx2){
+  private static void swap(int[] ary, int idx1, int idx2){
     int temp = ary[idx2];
     ary[idx2] = ary[idx1];
     ary[idx1] = temp;
   }
 
-  public static void pushDown(int[] data, int size, int idx){
+  private static void pushDown(int[] data, int size, int idx){
     if (!hasLeft(size, idx)) return;
     else if (!hasRight(size, idx)){
       if ((data[getLeft(size, idx)] > data[idx])) swap(data, idx, getLeft(size, idx));
