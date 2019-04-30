@@ -1,7 +1,8 @@
+import java.util.Arrays;
 public class driver{
   public static void main(String[]args){
-    int[] ary = {5, 4, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0};
-    String heap = HeapPrinter.toString(ary);
-    System.out.println(heap);
+    int[] ary = {4, 3, 6, 1, 2, 8, 7, 6};
+    MyHeap.heapSort(ary);
+    System.out.println(Arrays.toString(ary));
   }
 }
