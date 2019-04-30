@@ -34,7 +34,8 @@ public class MyHeap{
   }
 
   public static void heapify(int[] data){
-    for (int idx = data.length - 1; idx >= 0; idx --) pushDown(data, data.length - 1, idx);
+    int start = (data.length - 2)/2;
+    for (int idx = start; idx >= 0; idx --) pushDown(data, data.length - 1, idx);
   }
 
   public static void heapSort(int data[]){
